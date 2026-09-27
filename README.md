@@ -1,20 +1,21 @@
 # 메킷 사이트 메이커
 WordPress를 말로 고치고, 바뀐 결과를 확인하는 한국어 Codex 스킬.
 
-**0.1.0 · 공개 사전 배포판** — 로컬 WordPress 시험을 마쳤으며, 처음 사용하는 수강생·Windows 완주 시험은 아직입니다.
+**0.2.0 · 공개 사전 배포판** — 기존 관련 글 실습의 로컬 WordPress 시험을 마쳤으며, 처음 사용하는 수강생·Windows 완주 시험은 아직입니다. 새 가독성·속도 절차의 모든 변경 사례를 실행 검증한 것은 아닙니다.
 검색 순위, AI 인용, 애드센스 승인을 보장하지 않습니다.
 
 ## 시작
-[학생용 3주차 가이드](https://makeit-edu.github.io/makeit-site-skills/)를 브라우저로 엽니다.
+[학생용 3주차 가이드](https://makeit-edu.github.io/makeit-site-skills/week3/)를 브라우저로 엽니다. 수강생이 받은 메킷애센 플러그인의 작업본을 업그레이드하는 수업입니다. 새 사이트 구축·글 자동생성은 이번 수업 목표가 아닙니다.
 새 작업 폴더에서 Codex에게 다음처럼 말합니다.
 
-> $skill-installer를 사용해서 https://github.com/makeit-edu/makeit-site-skills/tree/v0.1.0/skills/makeit-site-improve 의 스킬을 설치해줘. 같은 이름이 이미 있으면 덮어쓰지 말고 알려줘. 설치 후 실제 스킬 이름과 읽을 수 있는지 확인해줘.
+> $skill-installer를 사용해서 https://github.com/makeit-edu/makeit-site-skills/tree/v0.2.0/skills/makeit-site-improve 의 스킬을 설치해줘. 같은 이름이 이미 있으면 덮어쓰지 말고 알려줘. 설치 후 실제 스킬 이름과 읽을 수 있는지 확인해줘.
 
 설치 후 “메킷 사이트 메이커를 사용해…”라고 요청합니다. 발견되지 않으면 설치 위치를 확인하고 앱을 다시 시작합니다. 설치된 스킬의 이름·경로를 확인해야 설치 완료입니다. 다운로드 설치와 실제 대화에서의 사용 확인은 다릅니다. [검증 기록](docs/verification.md)을 확인하세요.
 
 ## 할 수 있는 일
 - 기존 플러그인의 출력 위치를 찾고, 개인 작업본 수정 또는 작은 독립 플러그인 제작 안내.
 - SEO·GEO/AEO 문제를 관찰·공식 근거·사용자 취향으로 나눠 설명.
+- 가독성·모바일 개선과 PageSpeed Insights 전후 측정 안내. 성능 측정 서비스나 순위 추적기가 내장된 것은 아닙니다.
 - 변경과 관련된 검사, ZIP 구성, 복구 안내.
 - “진단만” 요청하면 읽기 전용으로 진행.
 
@@ -26,7 +27,7 @@ Codex의 파일 작업이 가능한 환경, 수정 권한이 있는 소스, 실�
 ## 구성
 - `skills/makeit-site-improve`: 단독 설치 가능한 스킬.
 - `examples/makeit-related-lab`: 메킷이 새로 작성한 공개용 관련 글 실습 플러그인. 기존 관련 글을 자동 대체하지 않습니다.
-- `docs/index.html`: 학생용 가이드.
+- `docs/week3/index.html`: 현재 학생용 가이드. `docs/index.html`은 초기 참고 가이드로 보존.
 - `tests`: 검사 도구 자동시험.
 - `docs/verification.md`: 실제 검증 범위와 한계.
 

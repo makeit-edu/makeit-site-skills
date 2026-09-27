@@ -1,11 +1,12 @@
 ---
 name: makeit-site-improve
-description: WordPress 사이트의 SEO·GEO/AEO를 근거로 점검하거나, 플러그인을 개인화·제작하고 변경 결과를 검증할 때 사용한다. 일반 글 자동작성이나 네이버 발행 작업에는 사용하지 않는다.
+description: WordPress 플러그인을 SEO·가독성·모바일·속도 기준으로 개선하고 전후 결과를 검증할 때 사용한다. 메킷애센 업그레이드 실습과 일반 SEO·GEO/AEO 점검을 지원한다. 일반 글 자동작성이나 네이버 발행 작업에는 사용하지 않는다.
 ---
 
 # 메킷 사이트 메이커
 
 학생이 원하는 WordPress 변경을 확인 가능한 결과물로 연결한다. 메킷애센은 예제일 뿐 필수 의존성이 아니다.
+메킷 3주차에서는 학생이 받은 메킷애센의 개인 작업본을 업그레이드한다. 새 사이트 구축·글 생성·별도 플러그인 제작을 기본 해법으로 바꾸지 않는다. 기존 플러그인 밖 수정이 필요하면 이유를 설명하고 범위를 확인한다. 일반 사용자가 새 플러그인 제작을 명시한 경우에는 그 요청을 따른다.
 
 ## 요청에 맞게 시작
 - “봐줘/진단/제안”은 읽기 전용이다. “바꿔줘/만들어줘”는 지정한 작업본의 변경을 포함한다.
@@ -16,6 +17,8 @@ description: WordPress 사이트의 SEO·GEO/AEO를 근거로 점검하거나, �
 
 ## 필요한 자료만 읽기
 - 검색 진단·검색 관련 변경: [search-review.md](references/search-review.md).
+- 글자·간격·모바일 읽기 개선: [readability.md](references/readability.md).
+- PageSpeed Insights·느린 화면 개선: [performance.md](references/performance.md).
 - AI 답변·출처·요약 구조: [answer-readiness.md](references/answer-readiness.md).
 - 플러그인 수정·새 기능: [wordpress-changes.md](references/wordpress-changes.md).
 - 검사·ZIP·복구: [verification.md](references/verification.md).
@@ -27,6 +30,7 @@ description: WordPress 사이트의 SEO·GEO/AEO를 근거로 점검하거나, �
 3. 발견 사항은 관찰 위치, 근거, 영향, 수정 위치, 검사 방법을 기록한다. “확인됨 / 개선 제안 / 확인 필요 / 해당 없음”을 구분한다.
 4. 작은 변경은 간단히 알리고 진행한다. 큰 재설계·유료 도구 도입·삭제·운영 사이트 변경은 그 시점에 선택 또는 동의를 받는다.
 5. 작업 범위에 맞게 검사한다. 디자인 취향을 Google 요건으로 바꾸거나, 도구 점수를 순위·승인 확률로 설명하지 않는다.
+6. 학생이 원하는 개선을 말했으면 그 선택을 중심으로 진행한다. 선택이 없을 때만 현재 화면·소스에서 확인한 후보를 최대 세 가지 제시하고 하나 고르게 한다. 관찰하지 않은 결함을 예시 문장만으로 단정하지 않는다.
 
 ## 결과 전달
 학생에게는 바뀐 점, 직접 볼 화면, 미확인 항목, 다음 행동을 짧게 말한다. 구현 요청이면 실제 파일·검사 결과·설치 ZIP·복구 안내를 함께 남긴다.

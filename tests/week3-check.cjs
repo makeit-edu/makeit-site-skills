@@ -13,6 +13,19 @@ const path = require('node:path');
     page.on('pageerror', e => errors.push(e.message));
     assert.equal((await page.goto(url, {waitUntil:'networkidle'})).status(), 200);
     assert.equal(await page.locator('.step').count(), 8);
+    const prompts = new Set();
+    for (const choice of ['reading','mobile','speed']) {
+      await page.locator(`[name="upgrade"][value="${choice}"]`).check();
+      prompts.add(await page.locator('#change-prompt').textContent());
+      await page.locator('[data-copy="change-prompt"]').click();
+      assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),(await page.locator('#change-prompt').textContent()).trim());
+    }
+    assert.equal(prompts.size,3,'선택별로 서로 다른 요청문');
+    assert.equal(await page.locator('#speed-first').isVisible(),true);
+    assert.equal(await page.locator('#speed-guide').getAttribute('open'),'');
+    await page.locator('[name="upgrade"][value="reading"]').check();
+    assert.equal(await page.locator('#speed-first').isVisible(),false);
+    await page.locator('#step-5 summary').click();
     for (const scheme of ['light', 'dark']) {
       await page.emulateMedia({colorScheme:scheme});
       for (const width of [1440, 390, 320]) {
@@ -20,7 +33,7 @@ const path = require('node:path');
         await page.evaluate(() => scrollTo(0,0));
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
         await page.screenshot({path:path.join(output, `week3-${scheme}-${width}.png`)});
-        for (const id of ['step-3','step-5','step-6','step-8']) {
+        for (const id of ['step-3','step-4','step-5','step-6','step-8']) {
           await page.locator('#'+id).scrollIntoViewIfNeeded();
           await page.screenshot({path:path.join(output, `week3-${scheme}-${width}-${id}.png`)});
         }
@@ -32,7 +45,7 @@ const path = require('node:path');
         assert.equal(await images.evaluateAll(nodes => nodes.filter(n=>!n.complete || n.naturalWidth===0).length),0);
       }
     }
-    for (const id of ['install-prompt','change-prompt','check-prompt','zip-prompt']) {
+    for (const id of ['install-prompt','change-prompt','check-prompt','zip-prompt','speed-prompt']) {
       await page.locator(`[data-copy="${id}"]`).click();
       assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),(await page.locator('#'+id).textContent()).trim());
     }

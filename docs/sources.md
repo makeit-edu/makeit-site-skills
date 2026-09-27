@@ -5,6 +5,8 @@
 |---|---|---|
 | 스킬 구성·발견 | https://learn.chatgpt.com/docs/build-skills | SKILL.md, 선택 참고 자료, 프로젝트 .agents/skills |
 | 검색 기본 | https://developers.google.com/search/docs/fundamentals/seo-starter-guide | 요청과 관련된 제목·본문·링크 검토 |
+| 사용 경험 | https://developers.google.com/search/docs/appearance/page-experience | 가독성·모바일과 검색 효과 보장 구분 |
+| 속도 측정 | https://developers.google.com/speed/docs/insights/v5/about | 모의 검사·실제 방문자 데이터·측정 변동 구분 |
 | AI 검색 | https://developers.google.com/search/docs/appearance/ai-features | SEO 기본과 실제 확인 범위 구분 |
 | AI 검색 오해 | https://developers.google.com/search/docs/fundamentals/ai-optimization-guide | 전용 파일·점수로 노출 보장 금지 |
 | WP 구성 | https://developer.wordpress.org/plugins/plugin-basics/best-practices/ | 충돌 방지와 요청에 맞는 작은 구조 |
