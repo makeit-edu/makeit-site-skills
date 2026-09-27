@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="메킷 스킬을 준비하고, Codex에 원하는 변경을 말하고, 내 WordPress 플러그인을 만드는 중급반 3주차 안내서.">
+  <meta name="color-scheme" content="light dark">
+  <title>내 플러그인 만들기 — 월부월백 중급반 3주차</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#steps">실습 순서로 바로가기</a>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">월부월백 중급반 · 3주차</p>
+    <h1>코덱스로<br>내 플러그인 만들기</h1>
+    <p>바꾸고 싶은 것을 말하면 코덱스가 <b>작업본을 수정</b>합니다.<br>화면을 확인하고 <b>내 워드프레스에 적용</b>해 봅니다.</p>
+  </header>
+
+  <section class="prep" aria-labelledby="prep-title">
+    <h2 id="prep-title">먼저 챙길 것</h2>
+    <ul>
+      <li><b>코덱스를 사용할 수 있는 컴퓨터</b> — 작업 폴더를 열고 파일을 수정할 수 있어야 합니다</li>
+      <li><b>강의에서 받은 메킷애센 플러그인 ZIP</b> — 원본은 그대로 보관합니다</li>
+      <li><b>새 작업 폴더</b> — 이번에는 1·2주차 폴더와 따로 만듭니다</li>
+      <li><b>연습용 워드프레스</b> — 화면과 작동을 확인할 곳입니다</li>
+      <li>내가 바꾸고 싶은 <b>기능이나 모양 한 가지</b></li>
+    </ul>
+  </section>
+  <p class="tiny">안내서는 휴대폰으로 봐도 됩니다. 파일 수정 실습은 컴퓨터에서 진행하세요.</p>
+
+  <aside class="note warn intro-note"><b>2주차와 달라요 — 새 폴더에서 시작</b>이번에는 정해진 글쓰기 자동화를 실행하는 것이 아니라 <b>플러그인을 직접 바꿉니다.</b> 1·2주차 폴더 안의 프로그램과 설정은 건드리지 않습니다.</aside>
+
+  <div class="steps" id="steps">
+    <section class="step" id="step-1" aria-labelledby="title-1">
+      <div class="num" aria-hidden="true">1</div><div class="body">
+        <h2 id="title-1">새 폴더 만들고 코덱스로 열기</h2>
+        <p>컴퓨터에 <span class="path">내 플러그인 연습</span> 폴더를 만듭니다. 코덱스에서 <b>이 폴더를 작업 폴더로</b> 고르세요.</p>
+        <div class="screen"><div class="bar"><span>작업 폴더 · 설명용 그림</span></div><div class="folder-picture"><span class="folder-icon" aria-hidden="true"></span><b>내 플러그인 연습</b><span>이번 실습에서 새로 만든 폴더</span></div></div>
+        <aside class="note ok"><b>여기까지 확인</b>코덱스의 작업 폴더 이름이 ‘내 플러그인 연습’인지 보세요.</aside>
+      </div>
+    </section>
+
+    <section class="step" id="step-2" aria-labelledby="title-2">
+      <div class="num" aria-hidden="true">2</div><div class="body">
+        <h2 id="title-2">받은 플러그인 ZIP 넣기</h2>
+        <p>강의에서 받은 <b>메킷애센 ZIP</b>을 방금 만든 폴더 안에 복사해 넣으세요. 직접 압축을 풀거나 코드를 고치지 않아도 됩니다.</p>
+        <div class="file-flow" aria-label="받은 원본 ZIP은 보관하고 코덱스가 별도 작업본을 만듭니다"><div><span class="file-tag">ZIP</span><b>받은 원본</b><small>그대로 보관</small></div><span class="arrow" aria-hidden="true">→</span><div><span class="file-tag blue">수정</span><b>내 작업본</b><small>코덱스가 따로 준비</small></div></div>
+        <aside class="note stop"><b>원본을 지우지 마세요</b>잘못 바뀌었을 때 돌아갈 기준입니다. 수정본은 원본과 구분해서 만듭니다.</aside>
+        <details><summary>메킷애센 ZIP이 없다면</summary><p>독립 연습용 플러그인으로 시작할 수 있습니다. 메킷애센을 대신하는 제품은 아닙니다.</p><a class="linkbig" href="../downloads/makeit-related-lab-0.1.0.zip" download>연습용 플러그인 ZIP 받기 ↓</a><p>이 예제는 설치 후 글의 단축코드 블록에 <span class="path">[makeit_related_lab]</span>를 넣어 사용합니다. 같은 카테고리에 공개 글이 두 개 이상 있어야 다른 글 카드가 나옵니다.</p></details>
+      </div>
+    </section>
+
+    <section class="step" id="step-3" aria-labelledby="title-3">
+      <div class="num" aria-hidden="true">3</div><div class="body">
+        <h2 id="title-3">메킷 스킬 설치 — 이 문장</h2>
+        <p>아래 문장을 복사해서 <b>코덱스 채팅창</b>에 붙여넣으세요.</p>
+        <div class="prompt"><p id="install-prompt">$skill-installer를 사용해서 https://github.com/makeit-edu/makeit-site-skills/tree/v0.1.0/skills/makeit-site-improve 의 스킬을 설치해줘. 같은 이름이 이미 있으면 덮어쓰지 말고 알려줘. 설치 후 실제 스킬 이름과 읽을 수 있는지 확인해줘.</p><button type="button" data-copy="install-prompt">설치 문장 복사</button></div>
+        <aside class="note ok"><b>스킬은 ‘코덱스의 작업 지침’입니다</b>검색에 필요한 구조, 기존 기능 보호, 변경 후 확인 기준을 알려줍니다. <b>워드프레스에 설치하는 플러그인과는 다릅니다.</b> 스킬 자체에는 별도 API 키가 필요하지 않습니다.</aside>
+        <aside class="note warn"><b>설치를 진행할지 물으면</b>대상이 위 메킷 저장소인지 읽어보고 <span class="type">진행해</span>라고 답하세요. 다른 도구 설치나 비용이 나오면 무엇이 필요한지 먼저 확인합니다.</aside>
+        <p class="success">확인할 것: 코덱스가 <b>makeit-site-improve</b> 스킬을 찾고 읽을 수 있어야 합니다.</p>
+      </div>
+    </section>
+
+    <section class="step" id="step-4" aria-labelledby="title-4">
+      <div class="num" aria-hidden="true">4</div><div class="body">
+        <h2 id="title-4">바꾸고 싶은 것 말하기</h2>
+        <p>처음에는 <b>글 아래의 관련 글을 사진 카드로</b> 바꿔봅니다. 아래 문장을 그대로 보내세요.</p>
+        <div class="prompt"><p id="change-prompt">메킷 사이트 메이커를 사용해 이 폴더의 플러그인 ZIP을 살펴봐줘. 원본은 보관하고 작업본을 만들어줘. 기존 관련 글을 사진 카드로 바꾸고 컴퓨터에서는 3열, 휴대폰에서는 1열로 보여줘. 같은 기능을 중복 추가하지 말고, 사진이나 관련 글이 없는 경우도 처리해줘. 라이선스·광고·초기화 기능은 바꾸지 마.</p><button type="button" data-copy="change-prompt">수정 문장 복사</button></div>
+        <div class="screen"><div class="bar"><span>코덱스 대화 · 설명용 예시</span></div><div class="conversation"><p class="you">관련 글을 사진 카드로 바꿔줘.</p><p class="codex">기존 관련 글이 나오는 곳을 확인하고,<br>원본과 별도의 작업본을 수정할게요.</p></div><div class="screen-caption">실제 응답과 추가 질문은 파일과 환경에 따라 달라집니다.</div></div>
+        <aside class="note warn"><b>다른 기능까지 바꾼다고 하면</b><span class="type">이번에는 관련 글만 바꿔줘</span>라고 말하세요. 파일을 읽거나 수정할 권한을 요청하면 대상 폴더를 확인합니다.</aside>
+      </div>
+    </section>
+
+    <section class="step" id="step-5" aria-labelledby="title-5">
+      <div class="num" aria-hidden="true">5</div><div class="body">
+        <h2 id="title-5">연습 사이트에서 직접 확인</h2>
+        <p>코덱스가 다 만들었다고 하면 <b>연습용 워드프레스에서 화면과 작동</b>을 확인합니다. 아래는 실제 로컬 시험 화면입니다.</p>
+        <figure><figcaption><span>바꾸기 전</span>글자로 보이던 관련 글</figcaption><a href="../images/makeit-before.png" target="_blank" rel="noopener"><img src="../images/makeit-before.png" alt="변경 전 텍스트 중심 관련 글 목록" width="1118" loading="lazy"></a></figure>
+        <figure><figcaption><span>바꾼 뒤</span>사진이 있는 관련 글 카드</figcaption><a href="../images/makeit-after-1440.png" target="_blank" rel="noopener"><img src="../images/makeit-after-1440.png" alt="변경 후 사진과 제목이 있는 세 열의 관련 글 카드" width="1118" loading="lazy"></a></figure>
+        <p class="caption">검증용 글·이미지를 사용한 화면입니다. 사진을 누르면 크게 볼 수 있습니다.</p>
+        <ul class="checks"><li>카드를 누르면 <b>맞는 글이 열리나요?</b></li><li>휴대폰에서는 <b>한 줄에 하나씩</b> 보이나요?</li><li>사진이 없는 글과 긴 제목도 괜찮나요?</li><li>기존 본문·메뉴와 관련 글이 중복되거나 사라지지 않았나요?</li></ul>
+        <div class="prompt"><p id="check-prompt">이번 변경을 연습용 WordPress와 브라우저에서 확인해줘. 관련 글 중복, 링크, 사진 없는 글, 긴 제목, 모바일 화면, 기존 검색 관련 출력을 점검해줘. 실제 확인한 것과 못 확인한 것을 나눠서 알려줘. 운영 사이트에는 아직 적용하지 마.</p><button type="button" data-copy="check-prompt">점검 문장 복사</button></div>
+        <aside class="note warn"><b>연습 사이트가 아직 없다면</b><span class="type">운영 사이트를 건드리지 않고 연습할 환경을 준비하는 방법부터 알려줘</span>라고 말하세요. 준비가 안 되면 화면 검증은 아직 끝난 것이 아닙니다.</aside>
+        <aside class="note stop"><b>“문법 검사 통과”만으로 끝이 아닙니다</b>워드프레스에서 실제로 켜지고, 원하는 화면이 나오는지 확인해야 합니다.</aside>
+      </div>
+    </section>
+
+    <section class="step" id="step-6" aria-labelledby="title-6">
+      <div class="num" aria-hidden="true">6</div><div class="body">
+        <h2 id="title-6">이번에는 내 방식으로 바꾸기</h2>
+        <p>공통 실습이 되면 <b>내가 원하는 변화 한 가지</b>를 더 말해보세요. 강사의 문장을 그대로 따라 하는 데서 끝나지 않습니다.</p>
+        <div class="cmds examples"><div class="cmd"><b>글자</b><span>카드 제목을 조금 더 크게 해줘.</span></div><div class="cmd"><b>색상</b><span>카드 배경을 연한 초록색으로 바꿔줘.</span></div><div class="cmd"><b>배치</b><span>컴퓨터에서는 한 줄에 두 개만 보여줘.</span></div></div>
+        <div class="personal"><label for="idea">내가 원하는 변화 적기</label><textarea id="idea" rows="3" maxlength="2000" placeholder="예: 카드 제목을 더 크게 하고, 사진 모서리를 둥글게 해줘."></textarea><button type="button" id="build-prompt">내 요청문 만들기</button><div class="prompt" id="personal-result" hidden><p id="own-prompt"></p><button type="button" data-copy="own-prompt">내 요청문 복사</button></div><p class="caption">이 입력란은 문장만 만듭니다. 복사해서 코덱스에 보내야 수정됩니다.</p></div>
+        <aside class="note ok"><b>바꾼 뒤에는 한 번 더</b>5번처럼 화면과 링크를 다시 확인하세요. 원치 않는 부분이 바뀌면 그 부분을 정확히 말하면 됩니다.</aside>
+      </div>
+    </section>
+
+    <section class="step" id="step-7" aria-labelledby="title-7">
+      <div class="num" aria-hidden="true">7</div><div class="body">
+        <h2 id="title-7">내 설치 ZIP과 복구 방법 받기</h2>
+        <p>마음에 들고 검사도 끝났다면 <b>워드프레스에 설치할 ZIP</b>을 만들어 달라고 하세요.</p>
+        <div class="prompt"><p id="zip-prompt">확인한 작업본을 WordPress 설치용 ZIP으로 만들어줘. 원본은 덮어쓰지 마. 개인 키·비밀번호·수강생 설정 파일·DB·로그·백업은 넣지 말고, 기존 라이선스 기능은 유지해줘. 바꾼 내용, 검사 결과, 못 확인한 점, 원본으로 되돌리는 방법도 함께 정리해줘. 공개 배포는 하지 마.</p><button type="button" data-copy="zip-prompt">ZIP 요청 문장 복사</button></div>
+        <div class="note ok"><b>받을 것은 네 가지</b>내 수정본 ZIP · 변경 내용 · 검사 결과 · 이전 버전으로 돌아가는 방법.</div>
+        <aside class="note stop"><b>‘초기화’는 되돌리기가 아닙니다</b>초기화하면 글이나 설정이 지워질 수 있습니다. 원래대로 돌아갈 때는 보관한 원본과 백업을 사용합니다.</aside>
+      </div>
+    </section>
+
+    <section class="step" id="step-8" aria-labelledby="title-8">
+      <div class="num" aria-hidden="true">8</div><div class="body">
+        <h2 id="title-8">백업하고 내 워드프레스에 적용</h2>
+        <p>연습 사이트에서 확인한 뒤 진행합니다. <b>운영 사이트의 파일·DB를 백업</b>하고, 문제가 생겼을 때 복구할 방법을 먼저 확보하세요.</p>
+        <div class="screen"><div class="bar"><span>워드프레스 · 이동 순서</span></div><ol class="install-route"><li>관리자 → <b>플러그인</b></li><li><b>새로 추가 → 플러그인 업로드</b></li><li>내가 만든 <b>플러그인 ZIP 선택</b></li><li>기존판 교체 여부 확인 → <b>설치·활성화</b></li><li>실제 글과 모바일에서 <b>다시 확인</b></li></ol></div>
+        <aside class="note stop"><b>원본과 교체용 수정판을 함께 켜지 마세요</b>기존 플러그인을 교체하는 수정판인지, 별도로 켜는 추가 플러그인인지 코덱스에게 먼저 확인하세요. 폴더 이름만 다르다고 함께 켤 수 있는 것은 아닙니다.</aside>
+        <aside class="note warn"><b>화면이 그대로거나 오류가 나면</b>캐시와 활성화된 버전을 확인하세요. 오류가 나면 반복 설치하거나 초기화하지 말고, 수정판을 비활성화한 뒤 보관한 원본으로 복구합니다. 관리자 화면에 못 들어갈 경우를 대비해 호스팅 파일 복구 경로도 준비합니다.</aside>
+        <div class="note ok"><b>오늘의 결과물</b>받은 플러그인을 그대로 쓰는 데서 한 걸음 더 나아가, <b>내가 원하는 기능을 가진 작업본</b>과 설치 파일을 만들었습니다. 실제 사이트 확인까지 마쳤는지 마지막으로 점검하세요.</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="tail" aria-labelledby="commands-title">
+    <h2 id="commands-title">코덱스에게 하는 말은 이렇게</h2>
+    <div class="cmds"><div class="cmd"><b>설치 문장</b><span>처음 한 번, 메킷 스킬 준비 (3번)</span></div><div class="cmd"><b>바꾸고 싶은 것</b><span>관련 글 카드부터 내 요구 한 가지까지 (4·6번)</span></div><div class="cmd"><b>실제로 확인해줘</b><span>화면·링크와 못 확인한 부분 구분 (5번)</span></div><div class="cmd"><b>ZIP으로 만들어줘</b><span>검사 후 설치 파일·복구 방법 받기 (7번)</span></div><div class="cmd"><b>이 부분만 원래대로</b><span>초기화 대신 작업본의 특정 변경을 되돌리기</span></div></div>
+    <h2>막혔을 때</h2>
+    <div class="cmds"><div class="cmd"><b>스킬이 안 보여요</b><span>설치 위치와 스킬 이름을 확인해 달라고 하세요. 설치 파일이 있는데 발견되지 않으면 앱을 다시 시작하고 확인합니다.</span></div><div class="cmd"><b>ZIP을 못 읽어요</b><span>선택한 작업 폴더 안에 실제 ZIP 파일이 있는지 확인하세요.</span></div><div class="cmd"><b>연습 사이트가 없어요</b><span>5번 안내대로 준비 방법부터 묻습니다. 운영 사이트를 대신 연습장으로 쓰지 않습니다.</span></div><div class="cmd"><b>다른 곳도 바뀌었어요</b><span>원하지 않은 부분을 정확히 말하고 해당 변경만 되돌려 달라고 하세요.</span></div><div class="cmd"><b>사이트 오류가 나요</b><span>수정판을 비활성화하고 원본으로 복구합니다. 모르겠으면 오류 화면에서 비밀번호를 가리고 코치에게 보여주세요.</span></div></div>
+    <aside class="note warn"><b>SEO 스킬이면 승인이나 노출이 보장되나요?</b>아닙니다. 검색에 필요한 구조와 기존 기능을 확인하도록 돕는 지침입니다. 검색 순위·AI 답변 인용·애드센스 승인을 보장하지 않습니다.</aside>
+    <details class="teacher"><summary>강사·담당자용 검증 범위</summary><p>스킬 다운로드·설치, 로컬 WordPress 실행·화면·복구, 검사 도구 시험을 확인했습니다. Windows 첫 설치, 첫 수강생 완주, 운영 사이트 적용은 별도 검증이 필요합니다. 설치 파일 확인과 실제 대화에서의 스킬 사용은 구분합니다.</p><p><a href="../verification.md">상세 검증 기록</a> · <a href="../sources.md">공식 근거</a> · <a href="https://github.com/makeit-edu/makeit-site-skills">공개 저장소</a></p></details>
+  </section>
+  <footer>메킷 키트 · 월부월백 중급반 · 3주차<br>메킷 사이트 메이커 v0.1.0 사전 배포 · <a href="https://github.com/makeit-edu/makeit-site-skills/blob/main/LICENSE">MIT</a></footer>
+</main>
+<div id="notice" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
