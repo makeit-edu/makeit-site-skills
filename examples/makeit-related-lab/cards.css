@@ -1,0 +1,11 @@
+.makeit-related-lab { margin-block: 2rem; color: #162f2a; }
+.makeit-related-lab h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+.makeit-related-lab .makeit-related-lab__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 0; }
+.makeit-related-lab__grid > li { min-width: 0; margin: 0; padding: 0; }
+.makeit-related-lab .makeit-related-lab__card { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: #fff; color: #162f2a; border: 1px solid #bacdc5; border-radius: 12px; text-decoration: none; }
+.makeit-related-lab__card:hover { border-color: #17674c; box-shadow: 0 4px 14px #16382a16; }
+.makeit-related-lab__card:focus-visible { outline: 3px solid #166c51; outline-offset: 4px; }
+.makeit-related-lab .makeit-related-lab__image, .makeit-related-lab__placeholder { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.makeit-related-lab__placeholder { display: grid; place-items: center; background: #e8f0eb; color: #476b5a; font-size: .9rem; }
+.makeit-related-lab__title { display: block; padding: 18px; line-height: 1.6; font-weight: 700; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .makeit-related-lab .makeit-related-lab__grid { grid-template-columns: minmax(0, 1fr); } }

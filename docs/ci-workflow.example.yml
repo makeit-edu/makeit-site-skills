@@ -1,0 +1,24 @@
+# Reference only. Not installed as a GitHub Actions workflow.
+name: 검사 도구 회귀 확인
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.9', '3.12']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python }}
+      - name: 검사 도구 단위시험
+        run: python -m unittest discover -s tests -v
+      - name: 공개 플러그인 PHP 문법
+        run: python skills/makeit-site-improve/scripts/site_check.py lint examples/makeit-related-lab
+      - name: 가이드 자바스크립트 문법
+        run: node --check docs/guide.js

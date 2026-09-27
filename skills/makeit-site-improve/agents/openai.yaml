@@ -1,0 +1,4 @@
+interface:
+  display_name: "메킷 사이트 메이커"
+  short_description: "워드프레스의 검색 품질을 살피고 내 플러그인을 수정·검증합니다"
+  default_prompt: "$makeit-site-improve를 사용해 내 WordPress 플러그인을 살펴보고 원하는 변경과 검증을 도와줘."
